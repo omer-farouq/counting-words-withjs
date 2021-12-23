@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting Worde in the textbox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        *{
+            margin: 0; padding: 0; box-sizing: border-box; font-family: 'Josefin Sans', sans-serif;
+        }
+        div{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        textarea{
+            border: 2px solid #0984e3;
+            border-radius: 10px;
+            outline: none;
+            font-size: 1.2rem;
+            padding: 10px 2px;
+            box-shadow: 0 0 4px 1px #b2bec3;
+        }
+        button{
+            padding: 20px 30px;
+            background-color: #74b9ff;
+            color: white;
+            border-radius: 10px;
+            border: 2px solid #1060e0;
+            font-size: 1.2rem;
+            cursor: pointer;
+            outline: none;
+        }
+        p{
+            color: #0984e3 ;
+            font-size: 1.2rem;
+        }
+        h1{
+            margin-top: 10px ;
+            padding: 10px;
+            text-align: center;
+            color: #e92758 ;
+            font-size: 1.2rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Words and Characters Counter...</h1>
+    <div>
+        <textarea name="" id="words" cols="50" rows="10"></textarea>
+        <br>
+        <p id="showdata"> </p>
+        <br>
+        <p id="showcountwords"> </p>
+        <br>
+        <button onclick="countwords()">Count Char</button>
+    </div>   
+    <script>
+       const countwords = () =>{
+           //number of characters
+           let noc = document.getElementById('words').value.length;
+           //number of words
+           let now = document.getElementById('words').value;
+           
+           now = now.match( /\w+/g );
+           now = now.length;
+           console.log(now);
+           alert(noc);
+           document .getElementById("showdata").innerHTML = "The total Characters = " + noc;   
+
+           document .getElementById("showcountwords").innerHTML = "The total Words = " + now;   
+
+       }
+    </script>
+</body>
+</html>
